@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoute');
 const authRoutes = require('./routes/authRoute');
-// const path = require('path');
+const path = require('path');
 const app = express();
 const corsOptions = {
   origin: ['https://mern-frontend-zeta.vercel.app', 'https://mern-frontend-charles--dev-projects.vercel.app'],
@@ -14,8 +14,6 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 204,
 };
-app.use(cors(corsOptions));
-
 app.use(cors(corsOptions));
 
 app.use(helmet());
@@ -31,7 +29,7 @@ app.use('/test', (req, res) => {
 // const routes=require("../dist")
 app.use('/', userRoutes);
 app.use('/', authRoutes);
-// app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 app.use((err, req, res, next) => {
   if (err.name === 'UnaurthorizedError') {
     res.status(401).json({
