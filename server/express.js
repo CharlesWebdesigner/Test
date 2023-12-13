@@ -9,7 +9,7 @@ const authRoutes = require('./routes/authRoute');
 const path = require('path');
 const app = express();
 const corsOptions = {
-  origin: ['https://mern-frontend-zeta.vercel.app', 'https://mern-frontend-charles--dev-projects.vercel.app'],
+  origin: ['https://test-3i0uqf20y-charles-dev-projects.vercel.app', 'https://localhost:5000'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
