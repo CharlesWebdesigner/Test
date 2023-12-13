@@ -1,0 +1,5 @@
+/node_modules
+/mern-frontend
+.env
+.baberlrc
+vercel.json
