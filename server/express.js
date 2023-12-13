@@ -8,13 +8,13 @@ const userRoutes = require('./routes/userRoute');
 const authRoutes = require('./routes/authRoute');
 const path = require('path');
 const app = express();
-// const corsOptions = {
-//   origin: ['https://localhost:5000'],
-//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//   credentials: true,
-//   optionsSuccessStatus: 204,
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+  origin: ['https://test-d6tb.vercel.app'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions));
 
 app.use(helmet());
 app.use(compression());
